@@ -1,0 +1,33 @@
+<p>
+	<h1>HERE YA GO!</h1>
+</p>
+
+ 
+<p>
+<div id="user_nav">
+  <% if user_signed_in? %>
+    Signed in as <%= link_to current_user.email, edit_user_registration_path %>.  
+	<% if current_user.admin? %>
+	  </br>You're an admin!  
+	<% end %>
+	</br><%= link_to "Sign out", destroy_user_session_path %>
+  <% else %>
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	  <p><%= f.label :email %><br />
+	  <%= f.email_field :email %></p>
+
+	  <p><%= f.label :password %><br />
+	  <%= f.password_field :password %></p>
+
+	  <% if devise_mapping.rememberable? -%>
+	    <br /><%= f.check_box :remember_me %> <%= f.label :remember_me %>
+	  <% end -%>
+
+	  <br /><%= f.submit "Sign in" %>
+	<% end %>
+    <br />
+	You must contact this organization's administrator for an account.
+  <% end %>
+</div>
+</p>
+

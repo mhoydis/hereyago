@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HERE YA GO!</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	
+<% if flash[:notice] %>
+	<div id="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<%= link_to "Root path", root_path %>  
+<% if current_user.try(:admin?) %>
+	| <%= link_to "Control Panel", controlpanel_index_path %> 
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
