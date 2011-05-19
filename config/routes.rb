@@ -1,8 +1,10 @@
 Hereyago::Application.routes.draw do
   
-  devise_for :users
+  # replace devise_for :users with:
+  devise_for :users,  :controllers => { :registrations => "users/registrations" }
   devise_for :admins
 
+  resources :home
   resources :controlpanel
 
   get "home/index"
