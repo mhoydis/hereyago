@@ -7,8 +7,8 @@
 <div id="list_of_users">
   id | email | admin?</br>
   <% User.all.each do |user| %>
-	<%= user.id %> | 
-	<%= link_to user.email, edit_user_registration_path(user.id) %> | 
+	<%= link_to user.id, edit_user_registration_path(user.id) %> | 
+	<%= link_to user.email, home_path(user.id) %> | 
 	<%= user.admin %>
     </br>
   <% end %>

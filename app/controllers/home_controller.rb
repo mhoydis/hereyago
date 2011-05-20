@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 before_filter :authorize_user, :only => [:show]
 
   def show
-    @user = current_user(:id)
+    @user = User.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb  
     end

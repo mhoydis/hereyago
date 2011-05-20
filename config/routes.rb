@@ -1,7 +1,9 @@
 Hereyago::Application.routes.draw do
   
   # replace devise_for :users with:
-  devise_for :users,  :controllers => { :registrations => "users/registrations" }
+  #devise_for :users,  :controllers => { :registrations => "users/registrations" }
+  #devise_for :users,  :controllers => { :users => "users" }
+  devise_for :users
   devise_for :admins
 
   resources :home

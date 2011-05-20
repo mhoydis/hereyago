@@ -9,7 +9,7 @@ Hereyago is a rails app which uses Devise and Paperclip.
 DO NOT TRY TO USE THIS YET.  IT DOES NOT WORK YET. 
 
 
-Here's my currently wishlist of features:
+Here's my current wishlist of features:
 - A "sender" account can login, and choose a file to upload.  Enter an email address and hit send.  
 - The recipient will recieve an email URL and a generated password. Clicks the URL, enters the password, gets the file(s).
 - Optionally, the sender could choose to have the file automatically deleted after the recipient completes the download.
